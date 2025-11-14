@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="sum"></div>
+    <div id="sum1"></div>
+    <p style="color: red; font-weight: bold;">this is a if-else statment</p>
+    <div id="sum3"></div>
+    <div id="tempr"></div>
+    <p style="color:red; font-weight: bold;">this is a nested if-else statment</p>
+    <div id="nest"></div>
+    <br>
+    <div id="grade"></div>
+    <br>
+    <div id="marks"></div>
+    <script>
+        let a = 15
+        let b = 3
+        let sum = a * b
+        let result = document.getElementById("sum").innerHTML = "15 * 3 = " + sum
+        let c = 5, d = 10
+        let result1 = c + d
+        let total = document.getElementById("sum1").innerHTML = "5 + 10 = " + result1
+        let e = -1
+        if (e >= 0) {
+            let display = document.getElementById("sum3").innerHTML = e + " = given number is positive"
+        }
+        else {
+            let display2 = document.getElementById("sum3").innerHTML = e + " = give number is not positive"
+        }
+        let temperature = 30
+        if (temperature <= 25) {
+            let tempr = document.getElementById("tempr").innerHTML = temperature + " = it's not a hot today :)"
+        }
+        else {
+            let tempr2 = document.getElementById("tempr").innerHTML = temperature + " = it's hot today :("
+        }
+        let f = 0
+        if (f > 0) {
+            let nest = document.getElementById("nest").innerHTML = f + " = given number is positive"
+        }
+        else if (f === 0) {
+            let nest1 = document.getElementById("nest").innerHTML = f + " = given number is zero"
+        }
+        else if (f < 0) {
+            let nest3 = document.getElementById("nest").innerText = f + " = given number is negative"
+        }
+        else {
+            let nest4 = document.getElementById("nest").innerHTML = f + " = your number is not valid !"
+        }
+
+        let g = 80;
+
+        if (g >= 90 && g <= 100) {
+            document.getElementById("grade").innerHTML = "Your score is = " + g + " and your grade is A";
+        }
+        else if (g >= 80 && g < 90) {
+            document.getElementById("grade").innerHTML = "Your score is = " + g + " and your grade is B";
+        }
+        else if (g >= 70 && g < 80) {
+            document.getElementById("grade").innerHTML = "Your score is = " + g + " and your grade is C";
+        }
+        else if (g >= 60 && g < 70) {
+            document.getElementById("grade").innerHTML = "Your score is = " + g + " and your grade is D";
+        }
+        else if (g >= 50 && g < 60) {
+            document.getElementById("grade").innerHTML = "Your score is = " + g + " and your grade is E";
+        }
+        else if (g < 50) {
+            document.getElementById("grade").innerHTML = "You are fail.";
+        }
+        else {
+            document.getElementById("grade").innerHTML = "Your score is not valid!";
+        }
+
+        // Write a code snippet that assigns a value to a variable marks,
+        // then checks if the marks are greater than or equal to 75.
+        // If true, assign "Passed" to another variable result, otherwise assign
+        // "Failed". Display result using innerHTML.
+        let marks = 10
+        if (marks >= 75) {
+            let result10 = document.getElementById("marks").innerHTML = "marks >= 75 = " + marks
+        }
+        else {
+            let result11 = document.getElementById("marks").innerHTML = "marks is not greater than or equal to 75 = " + marks
+        }
+     
+
+    </script>
+</body>
+
+</html>
