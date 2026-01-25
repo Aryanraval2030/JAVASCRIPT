@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Quiz</title>
+
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+    <div class="container mt-5">
+
+        <h2 class="text-center mb-4">JavaScript Quiz</h2>
+
+        <!-- QUIZ CARD -->
+        <div class="card shadow p-4">
+            <h5 id="question" class="mb-3"></h5>
+
+            <div id="options" class="list-group"></div>
+
+            <div class="d-flex justify-content-between mt-4">
+                <button class="btn btn-secondary" id="prevBtn">Previous</button>
+                <button class="btn btn-primary" id="nextBtn">Next</button>
+            </div>
+        </div>
+
+        <!-- RESULT -->
+        <div id="result" class="alert alert-info mt-4 d-none text-center fw-bold"></div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        const quizData = [
+            {
+                question: "1. Which company developed JavaScript?",
+                options: ["Google", "Netscape", "Microsoft", "IBM"],
+                correct: 1
+            },
+            {
+                question: "2. Inside which HTML tag do we write JavaScript?",
+                options: ["<js>", "<script>", "<javascript>", "<code>"],
+                correct: 1
+            },
+            {
+                question: "3. Which keyword is used to declare a variable in JS?",
+                options: ["var", "let", "const", "All of the above"],
+                correct: 3
+            },
+            {
+                question: "4. Which method prints output to the console?",
+                options: ["print()", "console.log()", "log()", "message()"],
+                correct: 1
+            }
+        ];
+
+        let currentIndex = 0;
+        let score = 0;
+        let userAnswers = [];
+
+        const questionEl = document.getElementById("question");
+        const optionsEl = document.getElementById("options");
+        const resultEl = document.getElementById("result");
+
+        function loadQuestion() {
+            let q = quizData[currentIndex];
+            questionEl.textContent = q.question;
+
+            optionsEl.innerHTML = "";
+
+            q.options.forEach((opt, i) => {
+                const btn = document.createElement("button");
+                btn.className = "list-group-item list-group-item-action";
+                btn.textContent = opt;
+
+                // highlight if selected before
+                if (userAnswers[currentIndex] === i) {
+                    btn.classList.add("active");
+                }
+
+                btn.onclick = () => selectOption(i);
+                optionsEl.appendChild(btn);
+            });
+        }
+
+        function selectOption(i) {
+            userAnswers[currentIndex] = i;
+            loadQuestion();
+        }
+
+        document.getElementById("nextBtn").onclick = () => {
+            if (currentIndex < quizData.length - 1) {
+                currentIndex++;
+                loadQuestion();
+            } else {
+                // Calculate score
+                score = 0;
+                quizData.forEach((q, index) => {
+                    if (userAnswers[index] === q.correct) score++;
+                });
+
+                resultEl.classList.remove("d-none");
+                resultEl.innerHTML = `🎉 Your Score: ${score} / ${quizData.length}`;
+            }
+        };
+
+        document.getElementById("prevBtn").onclick = () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                loadQuestion();
+            }
+        };
+
+        // Load first question
+        loadQuestion();
+    </script>
+
+</body>
+
+</html>
