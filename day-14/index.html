@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: rgb(235, 235, 235);
+        }
+
+        #main {
+            height: 300px;
+            width: 50%;
+            border: none;
+            display: flex;
+            justify-self: center;
+            margin-top: 5vh;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            justify-content: center;
+        }
+
+        #buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+        }
+
+        button {
+            height: 50px;
+            background-color: transparent;
+            width: 50px;
+            cursor: pointer;
+            font-size: 40px;
+            color: white;
+            border: none;
+            
+        }
+
+        #prev {
+            position: absolute;
+            bottom: 125px;
+            left: 27vw;
+        }
+
+        #next {
+            position: absolute;
+            bottom: 125px;
+            right: 27vw;
+        }
+
+        #one1 {
+            object-fit: cover;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="main">
+        <img id="one1" src="" alt="">
+    </div>
+    <div id="buttons">
+        <button id="prev">«</button>
+        <button id="next">»</button>
+    </div>
+
+
+    <script>
+        let main = document.getElementById("main")
+
+
+        let prev = document.getElementById("prev");
+        let next = document.getElementById("next");
+
+
+        let array = ["https://wallpapers.com/images/hd/hd-sunset-at-beach-w5ped7x6g3uo2o76.jpg",
+            "https://w0.peakpx.com/wallpaper/265/481/HD-wallpaper-nature.jpg",
+            "https://media.gettyimages.com/id/471586748/video/sunset-beach.jpg?s=640x640&k=20&c=qFJJnI3Y2Tgkq2l6fDpLHI5M8FXQmoNGPBsVA6lPY2Q="
+            ,"https://cdn.pixabay.com/photo/2023/10/21/11/46/sunset-8331285_1280.jpg"
+        ];
+
+
+        let count = 0
+        function show(count) {
+            one1.src = array[count];
+            one1.style.width = "100%"
+        }
+
+        show(count)
+        next.addEventListener("click", function () {
+            count++;
+            if (count == array.length) {
+                count = 0;
+            }
+            show(count);
+        });
+        prev.addEventListener("click", function () {
+            if (count == 0) {
+                count = array.length - 1;
+            }
+            else {
+                count--;
+            }
+            show(count);
+        });
+    </script>
+</body>
+
+</html>
