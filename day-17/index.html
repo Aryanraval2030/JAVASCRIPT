@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timer</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .outer {
+            height: 400px;
+            width: 300px;
+            border: 1px solid rgb(0, 234, 255);
+            border-radius: 5px;
+            box-shadow: rgba(0, 238, 255, 0.1) 0px 8px 24px, rgba(0, 238, 255, 0.1) 0px 16px 56px, rgba(0, 238, 255, 0.1) 0px 24px 80px;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+        }
+
+        .inr {
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            border: 1px solid aqua;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #timer {
+            font-size: 4rem;
+            color: white;
+        }
+
+        #pera_2 {
+            font-size: 4rem;
+            color: aqua;
+        }
+
+        #input-btn {
+            padding: 5px 10px;
+            border: 1px solid aqua;
+            margin-top: 5px;
+            background-color: black;
+            border-radius: 4px;
+            color: white;
+        }
+
+        #btn {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        button {
+            padding: 10px 30px;
+            background-color: black;
+            margin-top: 40px;
+            color: white;
+            cursor: pointer;
+            border: 1px solid aqua;
+            border-radius: 5px;
+        }
+        #err {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <input type="text" id="input-btn" placeholder="enter seconds!">
+        <div class="inr">
+            <p id="timer">00</p>
+        </div>
+        <p id="pera_2">seconds</p>
+        <div class="btn">
+            <button id="btn1">start</button>
+            <button id="btn2">stop</button>
+        </div>
+        <div class="err"></div>
+    </div>
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
