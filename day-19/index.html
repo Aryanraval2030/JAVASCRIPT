@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>auto-slider</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(46, 46, 46);
+        }
+
+        .container {
+            height: 350px;
+            width: 450px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .imges {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="" alt="" class="imges">
+    </div>
+
+    <script>
+        let container = document.querySelector(".container")
+        let imges = document.querySelector(".imges")
+
+        let arryOfImg = [
+            "https://i.pinimg.com/736x/f9/6a/2b/f96a2b05cf23883ad4e3a82f70780465.jpg",
+            "https://i.guim.co.uk/img/media/978bb76aaf05d05513f35f26c73ea61ad28b7f60/0_614_2628_1577/master/2628.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=0617fd285bbed119999eafa2ffb03e55",
+            "https://media.wired.com/photos/5932bdcd95879f6d0c009d66/master/w_658,h_701,c_limit/thor-hemsworth.jpg"
+        ]
+
+        let count = 0
+        function show() {
+            imges.src = arryOfImg[count]
+        }
+
+        show()
+
+        setInterval(() => {
+            count++
+            if (count == arryOfImg.length) {
+                count = 0
+            }
+            show()
+        }, 3000)
+    </script>
+</body>
+</html>
