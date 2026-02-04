@@ -108,3 +108,8 @@
    #edit:hover {
        background: #dc2626;
    }
+
+   .heading {
+       text-align: center;
+       padding: 0 0 10px 0;
+   }
