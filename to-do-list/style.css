@@ -1,0 +1,110 @@
+   * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       font-family: "Segoe UI", sans-serif;
+   }
+
+   body {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: 100vh;
+       background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+   }
+
+   .main-container {
+       width: 500px;
+       padding: 25px;
+       border-radius: 16px;
+       background: #ffffff;
+       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+   }
+
+   .input-btn {
+       display: flex;
+       gap: 12px;
+       margin-bottom: 20px;
+   }
+
+   .input {
+       flex: 1;
+       padding: 14px 18px;
+       border: 2px solid #000000;
+       border-radius: 25px;
+       font-size: 16px;
+       outline: none;
+       transition: 0.3s;
+   }
+
+   .input:focus {
+       border-color: #4f46e5;
+   }
+
+   #btn {
+       padding: 10px 30px;
+       border-radius: 30px;
+       font-size: 16px;
+       border: none;
+       background: #000000;
+       color: #fff;
+       cursor: pointer;
+       transition: 0.3s;
+   }
+
+   #btn:hover {
+       background: #4338ca;
+   }
+
+   .forshow {
+       display: flex;
+       flex-direction: column;
+       gap: 10px;
+   }
+
+   .outer {
+       display: flex;
+       width: 100%;
+       justify-content: space-between;
+       align-items: center;
+       padding: 12px 16px;
+       border-radius: 12px;
+       background: #f9fafb;
+       gap: 50px;
+       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+   }
+
+   .outer span {
+       font-size: 15px;
+       color: #111827;
+   }
+
+   #remove {
+       padding: 6px 14px;
+       border-radius: 20px;
+       border: none;
+       background: #ef4444;
+       color: #fff;
+       cursor: pointer;
+       font-size: 14px;
+       transition: 0.3s;
+   }
+
+   #remove:hover {
+       background: #dc2626;
+   }
+
+   #edit {
+       padding: 6px 14px;
+       border-radius: 20px;
+       border: none;
+       background: #ef4444;
+       color: #fff;
+       cursor: pointer;
+       font-size: 14px;
+       transition: 0.3s;
+   }
+
+   #edit:hover {
+       background: #dc2626;
+   }
